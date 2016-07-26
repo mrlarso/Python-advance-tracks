@@ -1,11 +1,18 @@
-def is_Vowel(character):
-	#code goes here
+def is_vowel(character):
+	return character.lower() in 'aeiouy'
 
-	return
 def position_of_first_vowel(word):
-	#code goes here.
-	return
+	for character in word:
+		if is_vowel(character):
+			if character.lower() == 'y' and word.index(character) == 0:
+				pass
+			else:
+				return word.index(character)
+	return -1
 
 def pigify(word):
-	#code goes here.
-	return
+	if position_of_first_vowel(word) in [0,-1]:
+		return word + "-way"
+	elif word[:2].lower() == "qu":
+		return word[2:] + "-quay"
+	return word[position_of_first_vowel(word):] +'-'+ word[:position_of_first_vowel(word)] + 'ay'

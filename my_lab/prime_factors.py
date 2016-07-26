@@ -1,15 +1,8 @@
 def is_prime(number):
-	divisor = 2
-	factors = []
-	while divisor < number:
+	for divisor in range(2,number):
 		if number%divisor == 0:
-			factors.append(divisor)
-		divisor += 1
-	print factors
-	if len(factors) == 0:
-		return True
-	else:
-		return False
+			return False
+	return True
 
 def largest_prime_factor(args):
 	biggest_prime = 1
