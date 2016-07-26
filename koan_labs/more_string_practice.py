@@ -3,11 +3,8 @@ def is_vowel(character):
 
 def position_of_first_vowel(word):
 	for character in word:
-		if is_vowel(character):
-			if character.lower() == 'y' and word.index(character) == 0:
-				pass
-			else:
-				return word.index(character)
+		if is_vowel(character) and not (character.lower() == 'y' and word.index(character) == 0):
+			return word.index(character)
 	return -1
 
 def pigify(word):
